@@ -133,7 +133,7 @@ const DashboardApp: React.FC<DashboardConfig> = ({children, theme, visualIdentit
             children: Children.toArray(page.props.children)?.map( (c:any, idx) => (
               { 
                 label: c.props.title, // A factoriser avec les pages hors groupes
-                path: page.props.path ?? slug(c.props.title ?? idx),
+                path: c.props.path ?? slug(c.props.title ?? idx),
                 element:c,
                 hidden:c.props.hidden ?? false,
                 icon:renderIcon(c.props.icon)
